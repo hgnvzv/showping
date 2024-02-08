@@ -6,22 +6,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CartsModule } from "./carts/carts.module";
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    SharedModule,
-    ProductsModule,
-    RouterModule,
-    ReactiveFormsModule,
-    FormsModule,
-    
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        SharedModule,
+        ProductsModule,
+        RouterModule,
+        ReactiveFormsModule,
+        FormsModule,
+        CartsModule
+    ]
 })
 export class AppModule { }

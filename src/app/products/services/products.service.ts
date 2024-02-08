@@ -7,16 +7,21 @@ import { environment } from 'src/environments/environment';
 })
 export class ProductsService {
 
-  constructor(private http:HttpClient) { }
-  getAllproducts(){
-    return this.http.get(environment.baseApi + 'products')
+  constructor(private http: HttpClient) { }
+  
+  getAllproducts() {
+    return this.http.get(environment.baseApi + 'products');
   }
 
-
-  getAllCategories(){
-    return this.http.get(environment.baseApi + 'products/categories')
+  getAllCategories() {
+    return this.http.get(environment.baseApi + 'products/categories');
   }
-  getproductsByCategory(keyword:any){
-    return this.http.get(environment.baseApi + 'products/categories/'+keyword)
+
+  getproductsByCategory(keyword: any) {
+    return this.http.get(environment.baseApi + 'products/categories/' + keyword);
+  }
+
+  getProductById(id: any) {
+    return this.http.get(environment.baseApi + 'products/categories/' + id); 
   }
 }

@@ -1,0 +1,42 @@
+.box {
+    background-color: #87ceeb; /* خلفية شفافة */
+    border-radius: 10px; /* زوايا مستديرة */
+    padding: 20px;
+    margin: 0 auto; /* يوضع في وسط الصفحة أفقياً */
+    width: 80%; /* عرض العنصر */
+  }
+  
+  .row {
+    display: flex;
+    justify-content: center; /* يوضع في وسط الصفحة عمودياً */
+  }
+  
+  .col-md-7 {
+    width: 50%; /* نصف العرض لكل عنصر */
+  }
+  
+  .col-sm-12 {
+    width: 100%; /* عرض كامل للشاشات الصغيرة */
+  }
+  
+  .info {
+    background-color: rgba(255, 255, 255, 0.7); /* خلفية شفافة */
+    border-radius: 10px; /* زوايا مستديرة */
+    padding: 20px;
+  }
+  
+  .info ul {
+    list-style-type: none; /* إزالة نقاط القائمة */
+    padding: 0;
+  }
+  
+  .info ul li {
+    margin-bottom: 10px; /* تباعد بين العناصر */
+  }
+  
+  img {
+    display: block; /* لجعل الصورة تأخذ مساحة كاملة وتكون مركزية */
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  

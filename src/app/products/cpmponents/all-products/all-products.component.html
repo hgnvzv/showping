@@ -1,23 +1,11 @@
 <div class="container mt-4">
     <div class="my-2 w-100">
-        <label for="" class="my-2"> categories:</label>
-        <select class="form-control" (change)="FilterCategories($event)">
-            <option value="all" selected>All</option>
-            <option value="{{option}}" *ngFor="let option of Categories">{{option}}</option>
-        </select>
+        <app-select [data]="Categories" [title]="'Categories'" (selectedValue)="FilterCategories($event)"></app-select>
     </div>
     <div class="row" *ngIf="!loading">
-      <div class="col-md-3 mb-4" *ngFor="let item of products">
-        <div class="card">
-          <img class="card-img-top" src="{{item.image}}" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">{{item.title}}</h5>
-            <p class="card-text">{{item.description}}</p>
-            <button class="btn btn-success">Add to cart</button>
-            <span class="price">{{item.price}} l.e</span>
-          </div>
+        <div class="col-md-3 mb-4" *ngFor="let item of products">
+             <app-product [data]="item" (item)="addToCart($event)"></app-product>
         </div>
-      </div>
     </div>
     <div class="text-center w-100"*ngIf="loading">
         <app-spinner></app-spinner>

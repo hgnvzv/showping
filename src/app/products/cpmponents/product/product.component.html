@@ -1,0 +1,13 @@
+<div class="card" >
+    <img class="card-img-top" src="{{data.image}}" alt="Card image cap" routerLink="/details/{{data.id}}">
+    <div class="card-body">
+      <h5 class="card-title">{{data.title}}</h5>
+      <p class="card-text">{{data.description}}</p>
+      <button class="btn btn-success" *ngIf="!addButton" (click)="addButton = true" >Add to cart</button>
+      <div class="d-flex w-80" *ngIf="addButton" >
+        <input type="number" class="form-control" [(ngModel)]="amount">
+        <button class="btn btn-danger" (click)="add();addButton=false">Add</button>
+      </div>
+      <span class="price">{{data.price}} l.e</span>
+    </div>
+  </div>

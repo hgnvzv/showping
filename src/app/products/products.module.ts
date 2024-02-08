@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 import { AllProductsComponent } from './cpmponents/all-products/all-products.component';
 import { ProductsDetailsComponent } from './cpmponents/products-details/products-details.component';
 import { SharedModule } from "../shared/shared.module";
+import { ProductComponent } from './cpmponents/product/product.component';
+import { RouterModule } from '@angular/router';
+
 
 
 
@@ -11,13 +14,20 @@ import { SharedModule } from "../shared/shared.module";
     declarations: [
         AllProductsComponent,
         ProductsDetailsComponent,
+        ProductComponent,
     ],
     exports: [
-        AllProductsComponent
+        AllProductsComponent,
+        ProductComponent,
+        ProductsDetailsComponent
+
+        
     ],
     imports: [
         CommonModule,
-        SharedModule
+        SharedModule,
+        RouterModule
+        
     ]
 })
 export class ProductsModule { }

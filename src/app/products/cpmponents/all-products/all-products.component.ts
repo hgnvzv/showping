@@ -9,12 +9,14 @@ import { ProductsService } from '../../services/products.service';
 export class AllProductsComponent {
   products: any[]=[];
   Categories:any[]=[];
-  loading:boolean = false
+  loading:boolean = false;
+  cartproducts:any[]=[]
+  model:any[]= []
   constructor(private service:ProductsService){}
 
   ngOnInit():void{
-    this.getproducts()
-    this.getCategories()
+    this.getCategories();
+    this.getproducts();
   }
 
   getproducts(){
@@ -52,6 +54,25 @@ export class AllProductsComponent {
     error =>{
       alert("Error")
      })
+  }
+  addToCart(event:any){
+   /*JSON.stringify() //sent data مثلما هي 
+   JSON.parse()     //recive data ارجاعها مثلماه هي */
+   if ("cart" in localStorage){
+    this.cartproducts = JSON.parse(localStorage.getItem("cart")!)
+    let exist = this.cartproducts.find(item => item.item.id == event.item.id)
+    if(exist){
+      alert("العنصر بالفعل موجود في السلة ")
+    }else{
+      this.cartproducts.push(event)
+    localStorage.setItem("cart",JSON.stringify(this.cartproducts))
+    }
+    
+   }else{
+    this.cartproducts.push(event)
+    localStorage.setItem("cart",JSON.stringify(this.cartproducts))
+   }
+
   }
 
 }
